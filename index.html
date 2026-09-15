@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
         
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         .font-luxury { font-family: 'Playfair Display', serif; }
         
         .hero-brainz {
@@ -24,10 +24,11 @@
         }
 
         .product-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .product-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
@@ -42,66 +43,70 @@
                     <span class="text-2xl font-luxury italic text-amber-600">BP</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#brainz" class="text-gray-900 hover:text-amber-600 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Brainz</a>
-                    <a href="#pescora" class="text-gray-900 hover:text-amber-800 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Pescora</a>
-                    <a href="#produtos" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Catálogo de Produtos</a>
+                    <!-- Links agora levam direto aos subprodutos da marca correspondente -->
+                    <a href="#produtos-brainz" class="text-gray-900 hover:text-amber-600 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Coleção Brainz</a>
+                    <a href="#produtos-pescora" class="text-gray-900 hover:text-amber-800 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Linha Pescora</a>
+                    <a href="#sobre" class="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-semibold uppercase tracking-wide">Desperdício Zero</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Brainz Section -->
-    <section id="brainz" class="hero-brainz h-screen flex items-center justify-center text-center">
+    <!-- Brainz Hero -->
+    <section class="hero-brainz h-screen flex items-center justify-center text-center">
         <div class="px-4 mt-20">
             <h1 class="text-5xl md:text-7xl font-luxury text-white mb-4 tracking-wider">BRAINZ</h1>
             <p class="text-xl md:text-2xl text-amber-200 font-light mb-8 max-w-2xl mx-auto">Exotic Fish Leather. Sustentabilidade, luxo e resistência na pele de tilápia.</p>
-            <a href="#produtos" class="border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-widest text-sm font-semibold">Ver Coleção</a>
+            <a href="#produtos-brainz" class="border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-widest text-sm font-semibold">Ver Produtos Brainz</a>
         </div>
     </section>
 
-    <!-- Pescora Section -->
-    <section id="pescora" class="hero-pescora h-screen flex items-center justify-center text-center">
-        <div class="px-4">
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-wider">PESCORA</h1>
-            <p class="text-xl md:text-2xl text-amber-100 font-light mb-8 max-w-2xl mx-auto">Petiscos naturais desidratados para pets. Saúde, colágeno e sustentabilidade animal.</p>
-            <a href="#produtos" class="bg-amber-800 text-white hover:bg-amber-900 transition duration-300 px-8 py-3 uppercase tracking-widest text-sm font-semibold rounded-full">Ver Produtos</a>
-        </div>
-    </section>
-
-    <!-- Produtos Section -->
-    <section id="produtos" class="py-24 bg-gray-100">
+    <!-- Produtos Brainz Section -->
+    <section id="produtos-brainz" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-luxury text-gray-900 mb-4">Nosso Catálogo</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Do mercado de altíssimo luxo até o cuidado natural com os pets. O portfólio do Grupo BP demonstra a versatilidade absoluta da nossa matéria-prima.</p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-luxury text-gray-900 mb-2">Coleção BRAINZ</h2>
+                <p class="text-gray-600">Alta costura e design exclusivo em couro exótico de tilápia.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Produto Brainz 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card">
-                    <img src="brainz_bag.jpg" alt="Bolsa Brainz de Couro de Tilápia" class="w-full h-80 object-cover">
+            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card">
+                    <img src="brainz_bag.jpg" alt="Bolsa Brainz" class="w-full h-80 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xs text-amber-600 font-bold tracking-widest uppercase mb-1">BRAINZ LUXURY</h3>
                         <h4 class="text-2xl font-luxury text-gray-900 mb-3">Bolsa Classic Exótica</h4>
                         <p class="text-gray-600 text-sm">Feita 100% em couro de tilápia premium. O padrão natural das escamas cria uma textura exclusiva e de altíssima durabilidade. Para mulheres exigentes.</p>
                     </div>
                 </div>
-
-                <!-- Produto Brainz 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card">
-                    <img src="brainz_shoes.jpg" alt="Sapatos Brainz de Couro de Tilápia" class="w-full h-80 object-cover">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card">
+                    <img src="brainz_shoes.jpg" alt="Sapatos Brainz" class="w-full h-80 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xs text-amber-600 font-bold tracking-widest uppercase mb-1">BRAINZ FOOTWEAR</h3>
                         <h4 class="text-2xl font-luxury text-gray-900 mb-3">Oxford Black Scales</h4>
                         <p class="text-gray-600 text-sm">A resistência tridimensional do couro de tilápia aplicada na alfaiataria de calçados masculinos. Conforto, impermeabilidade e um visual marcante.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Produto Pescora -->
+    <!-- Pescora Hero -->
+    <section class="hero-pescora h-screen flex items-center justify-center text-center">
+        <div class="px-4">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-wider">PESCORA</h1>
+            <p class="text-xl md:text-2xl text-amber-100 font-light mb-8 max-w-2xl mx-auto">Petiscos naturais desidratados para pets. Saúde, colágeno e sustentabilidade animal.</p>
+            <a href="#produtos-pescora" class="bg-amber-800 text-white hover:bg-amber-900 transition duration-300 px-8 py-3 uppercase tracking-widest text-sm font-semibold rounded-full">Ver Produtos Pescora</a>
+        </div>
+    </section>
+
+    <!-- Produtos Pescora Section -->
+    <section id="produtos-pescora" class="py-20 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-amber-900 mb-2">Linha PESCORA PET</h2>
+                <p class="text-amber-700">Nutrição animal super premium, 100% natural.</p>
+            </div>
+            <div class="max-w-sm mx-auto">
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg product-card border-t-4 border-amber-800">
                     <img src="pescora_pack.jpg" alt="Embalagem Pescora Petiscos" class="w-full h-80 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xs text-amber-800 font-bold tracking-widest uppercase mb-1">PESCORA NATURAL PET</h3>
                         <h4 class="text-2xl font-bold text-gray-900 mb-3">Fish Skin Rolls (150g)</h4>
                         <p class="text-gray-600 text-sm">Rolinhos crocantes de pele de tilápia desidratada. Embalagem premium stand-up pouch, preservando 100% do colágeno e ômega 3 sem aditivos químicos.</p>
                     </div>
@@ -111,24 +116,24 @@
     </section>
 
     <!-- About Group Section -->
-    <section id="sobre" class="py-20 bg-white">
+    <section id="sobre" class="py-20 bg-gray-900 text-gray-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-luxury mb-8">Nossa Filosofia: Desperdício Zero Absoluto</h2>
+            <h2 class="text-3xl font-luxury text-white mb-8">Nossa Filosofia: Desperdício Zero Absoluto</h2>
             <div class="grid md:grid-cols-2 gap-12 text-left">
-                <div>
-                    <h3 class="text-xl font-bold text-amber-700 mb-4">A Indústria BRAINZ</h3>
-                    <p class="text-gray-600 mb-4">A Brainz transforma a pele da tilápia de primeira qualidade, que antes era um passivo ambiental, em um couro exótico cobiçado pelo mercado da moda.</p>
+                <div class="p-6 border border-gray-700 rounded-lg">
+                    <h3 class="text-xl font-bold text-amber-500 mb-4">A Indústria BRAINZ</h3>
+                    <p class="mb-4">A Brainz transforma a pele da tilápia de primeira qualidade, que antes era um passivo ambiental, em um couro exótico cobiçado pelo mercado da moda.</p>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold text-amber-900 mb-4">A Marca PESCORA (Natural Pet)</h3>
-                    <p class="text-gray-600 mb-4">Em um modelo de negócio sinérgico incomparável, as peles de tilápia que apresentam pequenos cortes ou dimensões fora do padrão para bolsas ganham um destino nobre: tornam-se mastigáveis riquíssimos em proteínas para a Pescora.</p>
+                <div class="p-6 border border-gray-700 rounded-lg">
+                    <h3 class="text-xl font-bold text-amber-400 mb-4">A Marca PESCORA</h3>
+                    <p class="mb-4">As peles de tilápia com pequenos cortes ou fora do padrão para bolsas ganham um destino nobre: tornam-se mastigáveis riquíssimos em proteínas e ômega 3.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 text-center">
+    <footer class="bg-black text-gray-500 py-6 text-center text-sm">
         <p>&copy; 2026 Grupo Brainz & Pescora. Todos os direitos reservados.</p>
     </footer>
 
